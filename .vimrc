@@ -31,7 +31,7 @@ set foldlevel=2
 " set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
 set foldmethod=syntax " Markers are used to specify folds.
 set foldminlines=0 " Allow folding single lines
-set foldnestmax=3 " Set max fold nesting level
+set foldnestmax=5 " Set max fold nesting level
 set formatoptions=
 set formatoptions+=c " Format comments
 set formatoptions+=r " Continue comments by default
@@ -218,6 +218,8 @@ autocmd BufReadPost *
 
 " Filetype-dependent options
 autocmd Filetype python setlocal expandtab
+autocmd Filetype python setlocal tabstop=4
+autocmd Filetype python setlocal shiftwidth=4
 autocmd Filetype rst setlocal expandtab
 autocmd Filetype rst setlocal tabstop=3
 autocmd Filetype rst setlocal shiftwidth=3

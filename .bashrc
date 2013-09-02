@@ -90,6 +90,9 @@ alias la='ls -alh'
 alias l='ls -l'
 alias c='clear'
 
+alias please='sudo'
+alias bitchmode='sudo su'
+
 # If you vim 2 much:
 alias :q='exit'
 alias :wq="echo This is not vim, but nice try :\)"
