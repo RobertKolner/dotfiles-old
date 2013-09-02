@@ -2,18 +2,11 @@
 
 echo "Installing dotfiles. Your old files WILL be overridden. Sorry."
 
-# Delete unnecessary files:
-mv .bash_prompt ~/
-mv .bashrc ~/
-mv .gitignore ~/
-mv .vimrc ~/
-
-rm README.md
-rm install.sh
-
-dirname=${PWD##*/} # Get current directory name
-cd ..
-rmdir $dirname
+# Copy all the files:
+cp .bash_prompt ~/
+cp .bashrc ~/
+cp .gitignore ~/
+cp .vimrc ~/
 
 echo "Setting up ~/.vim directories"
 
