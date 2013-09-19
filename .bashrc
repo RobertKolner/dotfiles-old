@@ -91,7 +91,14 @@ alias l='ls -l'
 alias c='clear'
 
 alias please='sudo'
+alias pls='please'
 alias bitchmode='sudo su'
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 
 # If you vim 2 much:
 alias :q='exit'
