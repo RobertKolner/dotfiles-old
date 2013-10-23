@@ -110,6 +110,7 @@ alias mac='ssh robertko@macgyver.neuf.no'
 alias neuf='ssh robertko@login.neuf.no'
 alias fluorine='ssh robert@37.139.20.4'
 alias urania='ssh robert@urania.mienko.no'
+alias uio='ssh robertko@login.ifi.uio.no'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
