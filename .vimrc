@@ -120,11 +120,11 @@ command W w
 nnoremap ' `
 
 " Hard to type things
-imap >> →
-imap << ←
-imap ^^ ↑
-imap VV ↓
-imap aa λ
+" imap >> →
+" imap << ←
+" imap ^^ ↑
+" imap VV ↓
+" imap aa λ
 
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
