@@ -90,8 +90,9 @@ alias la='ls -alh'
 alias l='ls -l'
 alias c='clear'
 
-alias please='sudo'
-alias pls='please'
+alias sudo='sudo '
+alias please='sudo '
+alias pls='please '
 alias bitchmode='sudo su'
 
 alias ..="cd .."
@@ -104,6 +105,11 @@ alias ......="cd ../../../../.."
 alias :q='exit'
 alias :wq="echo This is not vim, but nice try :\)"
 
+# ssh for the lazy:
+alias mac='ssh robertko@macgyver.neuf.no'
+alias neuf='ssh robertko@login.neuf.no'
+alias fluorine='ssh robert@37.139.20.4'
+alias urania='ssh robert@urania.mienko.no'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
