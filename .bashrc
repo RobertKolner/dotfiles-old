@@ -108,7 +108,7 @@ alias :wq="echo This is not vim, but nice try :\)"
 # ssh for the lazy:
 alias mac='ssh robertko@macgyver.neuf.no'
 alias neuf='ssh robertko@login.neuf.no'
-alias fluorine='ssh robert@37.139.20.4'
+alias fluorine='ssh robertko@37.139.20.4'
 alias urania='ssh robert@urania.mienko.no'
 alias uio='ssh robertko@login.ifi.uio.no'
 
