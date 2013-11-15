@@ -112,6 +112,10 @@ alias fluorine='ssh robertko@37.139.20.4'
 alias urania='ssh robert@urania.mienko.no'
 alias uio='ssh robertko@login.ifi.uio.no'
 
+# path-changing changes:
+alias gimmerails='source ~/.rvm/bin/rvm'
+alias gimmevenv='source venv/bin/activate'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -146,3 +150,5 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
