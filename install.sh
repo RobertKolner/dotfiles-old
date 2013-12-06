@@ -7,6 +7,7 @@ cp .bash_prompt ~/
 cp .bashrc ~/
 cp .gitignore ~/
 cp .vimrc ~/
+cp .gitconfig ~/
 
 echo "Setting up ~/.vim directories"
 

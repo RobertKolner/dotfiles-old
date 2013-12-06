@@ -1,1 +1,1 @@
-cp ~/.bashrc ~/.vimrc ~/.bash_prompt ~/.gitignore .
+cp ~/.bashrc ~/.vimrc ~/.bash_prompt ~/.gitignore ~/.gitconfig .
