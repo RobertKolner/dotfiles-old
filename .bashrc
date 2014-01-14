@@ -105,6 +105,9 @@ alias ......="cd ../../../../.."
 alias :q='exit'
 alias :wq="echo This is not vim, but nice try :\)"
 
+# venv for the lazy:
+alias venv="source venv/bin/activate"
+
 # ssh for the lazy:
 alias mac='ssh robertko@macgyver.neuf.no'
 alias neuf='ssh robertko@login.neuf.no'
