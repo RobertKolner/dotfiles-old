@@ -68,4 +68,4 @@ function usernamehost() {
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
 
 # PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]\[$(basename "$(dirname "$PWD")")\]/\W\[\a\]${BOLD}\[\$(usernamehost)\]\[$GREEN\]\w\$(git_info)\[$WHITE\] \$ \[$RESET\]"
-PS1="\[${BOLD}\]$(usernamehost)\[${GREEN}\]\w\$(git_info)\[$WHITE\] \$ \[$RESET\]"
+PS1="\[${BOLD}\]$(usernamehost)\[${GREEN}\]\w\$(git_info)\[$WHITE\]\n\[$RESET\]\$ "
