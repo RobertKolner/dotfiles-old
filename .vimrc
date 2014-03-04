@@ -63,7 +63,7 @@ set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set report=0 " Show all changes.
 set ruler " Show the cursor position
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
-" set shiftwidth=4 " The # of spaces for indenting.
+set shiftwidth=4 " The # of spaces for indenting.
 set shortmess=atI " Don't show the intro message when starting vim.
 set showmode " Show the current mode.
 set showtabline=2 " Always show tab bar.
@@ -71,9 +71,11 @@ set sidescrolloff=3 " Start scrolling three columns before vertical border of wi
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
 set smartindent " Deindent on ending parenthesis.
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
+set softtabstop=4 " A tab is always 4 spaces.
 set splitbelow " New window goes below
 set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
+set tabstop=4 " Tabs are 4 spaces
 set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
 set ttymouse=xterm " Set mouse type to xterm.
@@ -224,6 +226,9 @@ autocmd Filetype rst setlocal expandtab
 autocmd Filetype rst setlocal tabstop=3
 autocmd Filetype rst setlocal shiftwidth=3
 autocmd Filetype haskell setlocal expandtab
+autocmd Filetype php setlocal expandtab
+autocmd Filetype php setlocal shiftwidth=4
+autocmd Filetype php setlocal tabstop=4
 
 " Set relative line numbers
 set relativenumber " Use relative line numbers. Current line is still in status bar.
