@@ -105,23 +105,29 @@ alias ......="cd ../../../../.."
 alias :q='exit'
 alias :wq="echo This is not vim, but nice try :\)"
 
-# venv for the lazy:
+# dogit:
+alias such='git '
+alias very='git '
+alias wow='git status'
+
+# path-changing changes:
+alias rails='source ~/.rvm/bin/rvm'
 alias venv="source venv/bin/activate"
 
 # ssh for the lazy:
-alias mac='ssh robertko@macgyver.neuf.no'
-alias neuf='ssh robertko@login.neuf.no'
-alias fluorine='ssh robertko@37.139.20.4'
-alias urania='ssh robert@urania.mienko.no'
-alias uio='ssh robertko@login.ifi.uio.no'
-
-# path-changing changes:
-alias gimmerails='source ~/.rvm/bin/rvm'
-alias gimmevenv='source venv/bin/activate'
+USERNAME=robertko
+alias mac="ssh ${USERNAME}@macgyver.neuf.no"
+alias neuf="ssh ${USERNAME}@login.neuf.no"
+alias fluorine="ssh ${USERNAME}@37.139.20.4"
+alias urania="ssh robert@urania.mienko.no"
+alias uio="ssh ${USERNAME}@login.ifi.uio.no"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias functions. Wat.
+function cdl() { cd "$@" && ls; }
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
