@@ -1,13 +1,16 @@
 #!/bin/bash
 
-echo "Installing dotfiles. Your old files WILL be overridden. Sorry."
+echo "Installing dotfiles. Your old files WILL be overridden. Sorry. You can find a backup of your old files in ~/.dotfiles-backup"
+FILES=".bash_prompt .bashrc .gitignore .vimrc .gitconfig"
+
+mkdir -p ~/.dotfiles-backup
 
 # Copy all the files:
-cp .bash_prompt ~/
-cp .bashrc ~/
-cp .gitignore ~/
-cp .vimrc ~/
-cp .gitconfig ~/
+for FILE in ${FILES}
+do
+	mv ~/${FILE} ~/.dotfiles-backup/
+	cp ${FILE} ~/
+done
 
 echo "Setting up ~/.vim directories"
 
