@@ -200,6 +200,9 @@ noremap <leader>ss :call StripWhitespace ()<CR>
 " :au BufWinLeave * mkview
 " :au BufWinEnter * silent loadview
 
+" Faster command mode
+nnoremap ; :
+
 " Join lines and restore cursor location (J)
 nnoremap J mjJ`j
 
