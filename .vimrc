@@ -250,7 +250,7 @@ set relativenumber " Use relative line numbers. Current line is still in status 
 au BufReadPost,BufNewFile * set relativenumber
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 filetype plugin indent on
 
 " JSON

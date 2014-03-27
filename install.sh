@@ -2,13 +2,13 @@
 
 echo "Installing dotfiles. Your old files WILL be overridden. Sorry. You can find a backup of your old files in ~/.dotfiles-backup"
 FILES=".bash_prompt .bashrc .gitignore .vimrc .gitconfig"
-
-mkdir -p ~/.dotfiles-backup
+BACKUP_DIR=~/.dotfiles-backup-`date +%Y%m%d-%H%M%S`
+mkdir -p $BACKUP_DIR
 
 # Copy all the files:
 for FILE in ${FILES}
 do
-	mv ~/${FILE} ~/.dotfiles-backup/
+	mv ~/${FILE} $BACKUP_DIR > /dev/null
 	cp ${FILE} ~/
 done
 
