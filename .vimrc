@@ -235,6 +235,12 @@ autocmd Filetype php setlocal tabstop=4
 autocmd Filetype html setlocal expandtab
 autocmd Filetype html setlocal shiftwidth=4
 autocmd Filetype html setlocal tabstop=4
+autocmd Filetype css setlocal expandtab
+autocmd Filetype css setlocal shiftwidth=4
+autocmd Filetype css setlocal tabstop=4
+autocmd Filetype scss setlocal expandtab
+autocmd Filetype scss setlocal shiftwidth=4
+autocmd Filetype scss setlocal tabstop=4
 autocmd Filetype js setlocal expandtab
 autocmd Filetype js setlocal shiftwidth=4
 autocmd Filetype js setlocal tabstop=4
