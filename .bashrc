@@ -117,8 +117,8 @@ alias venv="source venv/bin/activate"
 # ssh for the lazy:
 USERNAME=robertko
 alias mac="ssh ${USERNAME}@macgyver.neuf.no"
-alias neuf="ssh ${USERNAME}@login.neuf.no"
-alias fluorine="ssh ${USERNAME}@37.139.20.4"
+alias neuf="mosh ${USERNAME}@login.neuf.no"
+alias fluorine="mosh ${USERNAME}@37.139.20.4"
 alias urania="ssh robert@urania.mienko.no"
 alias uio="ssh ${USERNAME}@login.ifi.uio.no"
 
