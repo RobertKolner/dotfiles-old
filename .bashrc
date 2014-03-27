@@ -84,16 +84,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# this will avoid problems with using sudo in other aliases.
+alias sudo='sudo '
+
 # some more ls aliases
 alias ll='ls -lh'
 alias la='ls -alh'
 alias l='ls -l'
 alias c='clear'
-
-alias sudo='sudo '
-alias please='sudo '
-alias pls='please '
-alias bitchmode='sudo su'
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -104,11 +102,6 @@ alias ......="cd ../../../../.."
 # If you vim 2 much:
 alias :q='exit'
 alias :wq="echo This is not vim, but nice try :\)"
-
-# dogit:
-alias such='git '
-alias very='git '
-alias wow='git status'
 
 # path-changing changes:
 alias rails='source ~/.rvm/bin/rvm'
@@ -125,8 +118,11 @@ alias uio="ssh ${USERNAME}@login.ifi.uio.no"
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias functions. Wat.
-function cdl() { cd "$@" && ls; }
+# Alias functions.
+function cdls() { cd "$@" && ls; }
+function cdll() { cd "$@" && ll; }
+function cdla() { cd "$@" && la; }
+function cdl() { cd "$@" && l; }
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
