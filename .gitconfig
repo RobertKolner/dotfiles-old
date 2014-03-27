@@ -38,5 +38,5 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 [user]
-	name = Robert Kolner
-	email = robert.kolner@gmail.com
+	name = {git_name}
+	email = {git_email}

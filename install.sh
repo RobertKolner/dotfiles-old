@@ -2,7 +2,8 @@
 
 echo "Installing dotfiles. Your old files WILL be overridden. Sorry. You can find a backup of your old files in ~/.dotfiles-backup"
 FILES=".bash_prompt .bashrc .gitignore .vimrc .gitconfig"
-BACKUP_DIR=~/.dotfiles-backup-`date +%Y%m%d-%H%M%S`
+BACKUP_DIR=./backup/`date +%Y%m%d-%H%M%S`
+mkdir -p ./backup
 mkdir -p $BACKUP_DIR
 
 # Copy all the files:
@@ -12,6 +13,34 @@ do
 	cp ${FILE} ~/
 done
 
+echo "Configuring variables."
+
+# In .gitconfig, replace {git_name} and {git_email}:
+echo "-- What name do you want to use for git?"
+read git_name
+
+echo "-- What email do you want to use for git?"
+read git_email
+
+sed -i "s/{git_name}/$git_name/g" ~/.gitconfig
+sed -i "s/{git_email}/$git_email/g" ~/.gitconfig
+
+
+# In .bash_prompt replace {username}:
+echo "-- What should be your default username in .bash_prompt?"
+read username
+
+sed -i "s/{username}/$username/g" ~/.bash_prompt
+
+# In .bashrc replace ssh-usernames:
+echo "-- What should be your default ssh username in .bashrc?"
+read ssh_username
+
+sed -i "s/{ssh_username}/$ssh_username/g" ~/.bashrc
+
+
+
+echo "Configuring variables done."
 echo "Setting up ~/.vim directories"
 
 # Set up vim directories and install Pathogen:
