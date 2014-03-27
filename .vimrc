@@ -232,6 +232,12 @@ autocmd Filetype haskell setlocal expandtab
 autocmd Filetype php setlocal expandtab
 autocmd Filetype php setlocal shiftwidth=4
 autocmd Filetype php setlocal tabstop=4
+autocmd Filetype html setlocal expandtab
+autocmd Filetype html setlocal shiftwidth=4
+autocmd Filetype html setlocal tabstop=4
+autocmd Filetype js setlocal expandtab
+autocmd Filetype js setlocal shiftwidth=4
+autocmd Filetype js setlocal tabstop=4
 
 " Set relative line numbers
 set relativenumber " Use relative line numbers. Current line is still in status bar.
