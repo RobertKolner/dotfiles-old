@@ -107,13 +107,6 @@ alias :wq="echo This is not vim, but nice try :\)"
 alias rails='source ~/.rvm/bin/rvm'
 alias venv="source venv/bin/activate"
 
-# ssh for the lazy:
-USERNAME={ssh_username}
-alias mac="ssh ${USERNAME}@macgyver.neuf.no"
-alias neuf="ssh ${USERNAME}@login.neuf.no"
-alias fluorine="ssh ${USERNAME}@37.139.20.4"
-alias uio="ssh ${USERNAME}@login.ifi.uio.no"
-
 # this happens way too often:
 function gitp() {
 	git p$@

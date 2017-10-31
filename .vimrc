@@ -1,11 +1,6 @@
 " Make vim more useful
 set nocompatible
 
-" Set syntax highlighting options.
-"set t_Co=256
-"set background=dark
-syntax on
-
 " Enabled later, after Pathogen
 filetype off
 
@@ -18,37 +13,36 @@ set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 
 " Set some junk
-set autoindent " Copy indent from last line when starting new line.
+set autoindent					" Copy indent from last line when starting new line.
 set backspace=indent,eol,start
-set cursorline " Highlight current line
-set diffopt=filler " Add vertical spaces to keep right and left aligned
-set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
-set encoding=utf-8 nobomb " BOM often causes trouble
-set esckeys " Allow cursor keys in insert mode.
-set foldcolumn=4 " Column to show folds
+set cursorline					" Highlight current line
+set diffopt=filler				" Add vertical spaces to keep right and left aligned
+set diffopt+=iwhite				" Ignore whitespace changes (focus on code changes)
+set encoding=utf-8 nobomb		" BOM often causes trouble
+set esckeys						" Allow cursor keys in insert mode.
+set foldcolumn=4				" Column to show folds
 set foldenable
-set foldlevel=2
-" set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
-set foldmethod=syntax " Markers are used to specify folds.
-set foldminlines=0 " Allow folding single lines
-set foldnestmax=5 " Set max fold nesting level
+set foldlevel=2					" set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
+set foldmethod=syntax			" Markers are used to specify folds.
+set foldminlines=0				" Allow folding single lines
+set foldnestmax=5				" Set max fold nesting level
 set formatoptions=
-set formatoptions+=c " Format comments
-set formatoptions+=r " Continue comments by default
-set formatoptions+=o " Make comment when using o or O from comment line
-set formatoptions+=q " Format comments with gq
-set formatoptions+=n " Recognize numbered lists
-set formatoptions+=2 " Use indent from 2nd line of a paragraph
-set formatoptions+=l " Don't break lines that are already long
-set formatoptions+=1 " Break before 1-letter words
-set gdefault " By default add g flag to search/replace. Add g to toggle.
-set hidden " When a buffer is brought to foreground, remember undo history and marks.
-set history=1000 " Increase history from 20 default to 1000
-set hlsearch " Highlight searches
-set ignorecase " Ignore case of searches.
-set incsearch " Highlight dynamically as pattern is typed.
-set laststatus=2 " Always show status line
-set lispwords+=defroutes " Compojure
+set formatoptions+=c			" Format comments
+set formatoptions+=r			" Continue comments by default
+set formatoptions+=o			" Make comment when using o or O from comment line
+set formatoptions+=q			" Format comments with gq
+set formatoptions+=n			" Recognize numbered lists
+set formatoptions+=2			" Use indent from 2nd line of a paragraph
+set formatoptions+=l			" Don't break lines that are already long
+set formatoptions+=1			" Break before 1-letter words
+set gdefault					" By default add g flag to search/replace. Add g to toggle.
+set hidden						" When a buffer is brought to foreground, remember undo history and marks.
+set history=1000				" Increase history from 20 default to 1000
+set hlsearch					" Highlight searches
+set ignorecase					" Ignore case of searches.
+set incsearch					" Highlight dynamically as pattern is typed.
+set laststatus=2				" Always show status line
+set lispwords+=defroutes		" Compojure
 set lispwords+=defpartial,defpage " Noir core
 set lispwords+=defaction,deffilter,defview,defsection " Ciste core
 set lispwords+=describe,it " Speclj TDD/BDD
@@ -93,7 +87,9 @@ set wrapscan " Searches wrap around end of file
 " Status Line
 " hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
 " hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
-" set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
+set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
+let g:airline_theme = 'solarized'
+let g:airline_solarized_bg = 'dark'
 let g:Powerline_symbols = 'fancy'
 
 " Speed up viewport scrolling
@@ -136,15 +132,6 @@ nnoremap <silent> <leader>c :set nolist!<CR>
 " Clear last search (,qs)
 map <silent> <leader>qs <Esc>:noh<CR>
 " map <silent> <leader>qs <Esc>:let @/ = ""<CR>
-
-" Vim on the iPad
-if &term == "xterm-ipad"
-  nnoremap <Tab> <Esc>
-  vnoremap <Tab> <Esc>gV
-  onoremap <Tab> <Esc>
-  inoremap <Tab> <Esc>`^
-  inoremap <Leader><Tab> <Tab>
-endif
 
 " Remap keys for auto-completion, disable arrow keys
 " I still need these cuz im nub. so nub.
@@ -244,6 +231,9 @@ autocmd Filetype scss setlocal tabstop=4
 autocmd Filetype js setlocal expandtab
 autocmd Filetype js setlocal shiftwidth=4
 autocmd Filetype js setlocal tabstop=4
+autocmd Filetype yaml setlocal shiftwidth=2
+autocmd Filetype yaml setlocal tabstop=2
+autocmd Filetype yaml setlocal expandtab
 
 " Set relative line numbers
 set relativenumber " Use relative line numbers. Current line is still in status bar.
@@ -285,3 +275,9 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
+
+" Set syntax highlighting options.
+"set t_Co=256
+syntax enable
+set background=dark
+colorscheme solarized

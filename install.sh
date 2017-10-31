@@ -1,9 +1,16 @@
 #!/bin/bash
 
-echo "Installing dotfiles. Your old files WILL be overridden. Sorry. You can find a backup of your old files in ~/.dotfiles-backup"
+BACKUP_DIR=~/.dotfiles-backup/`date +%Y%m%d-%H%M%S`
 FILES=".bash_prompt .bashrc .gitignore .vimrc .gitconfig"
-BACKUP_DIR=./backup/`date +%Y%m%d-%H%M%S`
-mkdir -p ./backup
+
+if [ ! -f ./env.sh ]; then
+	echo "Copy env.sh.example to env.sh and edit it before continuing"
+	exit 1
+fi
+
+source ./env.sh
+
+echo "Installing dotfiles. Your old files WILL be overridden. Sorry. You can find a backup of your old files in ~/.dotfiles-backup"
 mkdir -p $BACKUP_DIR
 
 # Copy all the files:
@@ -13,34 +20,15 @@ do
 	cp ${FILE} ~/
 done
 
-echo "Configuring variables."
+echo "Configuring variables"
 
 # In .gitconfig, replace {git_name} and {git_email}:
-echo "-- What name do you want to use for git?"
-read git_name
-
-echo "-- What email do you want to use for git?"
-read git_email
-
-sed -i "s/{git_name}/$git_name/g" ~/.gitconfig
-sed -i "s/{git_email}/$git_email/g" ~/.gitconfig
-
+sed -i "s/{git_name}/$DOT_GIT_NAME/g" ~/.gitconfig
+sed -i "s/{git_email}/$DOT_GIT_EMAIL/g" ~/.gitconfig
 
 # In .bash_prompt replace {username}:
-echo "-- What should be your default username in .bash_prompt?"
-read username
+sed -i "s/{username}/$(whoami)/g" ~/.bash_prompt
 
-sed -i "s/{username}/$username/g" ~/.bash_prompt
-
-# In .bashrc replace ssh-usernames:
-echo "-- What should be your default ssh username in .bashrc?"
-read ssh_username
-
-sed -i "s/{ssh_username}/$ssh_username/g" ~/.bashrc
-
-
-
-echo "Configuring variables done."
 echo "Setting up ~/.vim directories"
 
 # Set up vim directories and install Pathogen:
@@ -54,4 +42,12 @@ mkdir -p ~/.vim/undo
 curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
+# Let's also install some nice vim plugins I'd want to install anyway:
+echo "Installing VIM plugins"
+git clone git://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+git clone git://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+git clone git://github.com/airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
+
 echo "Finished!"
+
