@@ -44,10 +44,10 @@ curl -Sso ~/.vim/autoload/pathogen.vim \
 
 # Let's also install some nice vim plugins I'd want to install anyway:
 echo "Installing VIM plugins"
-git clone git://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
-git clone git://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
-git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
-git clone git://github.com/airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
+git clone git@github.com:vim-airline/vim-airline ~/.vim/bundle/vim-airline
+git clone git@github.com:vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+git clone git@github.com:altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+git clone git@github.com:airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
 
 echo "Finished!"
 
